@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget elevatedBtn(yourText,{required onPress}) {
+Widget elevatedBtn(yourText,{required onPress, double? widthinput = 200.00}) {
   return ElevatedButton(
     onPressed: onPress,
     style: ElevatedButton.styleFrom(
@@ -8,7 +8,7 @@ Widget elevatedBtn(yourText,{required onPress}) {
 
     //testing
     child: SizedBox(
-      width: 200,
+      width: widthinput,
       child: Padding(
         // padding: const EdgeInsets.all(8.0),
         padding: const EdgeInsets.symmetric(vertical: 8),

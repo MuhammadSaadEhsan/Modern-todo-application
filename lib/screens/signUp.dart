@@ -13,7 +13,7 @@ class Singup extends StatelessWidget {
   AppServices myServices = AppServices();
 
   static TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
+  static TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmController = TextEditingController();
 
@@ -72,11 +72,36 @@ class Singup extends StatelessWidget {
 
             //elevated button ====================
             elevatedBtn("Sign Up", onPress: () {
-              if (passwordController.text == confirmController.text) {
+              if (passwordController.text == confirmController.text && nameController.text.isNotEmpty && nameController.text.length<9) {
                 myServices.signUp(context,
                     emailController: emailController.text,
                     passwordController: passwordController.text);
-              } else {
+              } 
+              else if(nameController.text.isEmpty){
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  content: Text(
+                    'Please provide your name',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                  backgroundColor: Color.fromRGBO(85, 132, 122, 1),
+                ));
+              }
+              else if(nameController.text.length<9){
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  content: Text(
+                    'Please write your short name',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                  backgroundColor: Color.fromRGBO(85, 132, 122, 1),
+                ));
+              }
+              else {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text(
                     'You have done a mistake in Password or Confirm Password, Try Again',

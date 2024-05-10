@@ -14,9 +14,8 @@ class GetStarted extends StatelessWidget {
         children: [
           design(),
           
-          const SizedBox(height: 10),
           Center(child: Image.asset("assets/man.png", height: 220)),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20),
           const Center(
             child: Text(
               "Get things done with TODo",
@@ -26,7 +25,7 @@ class GetStarted extends StatelessWidget {
                   fontWeight: FontWeight.w900),
             ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 15),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 50),
             child: Center(
@@ -44,7 +43,7 @@ class GetStarted extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           elevatedBtn("Get Started",onPress: () {
               Navigator.push(
