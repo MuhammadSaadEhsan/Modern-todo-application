@@ -89,7 +89,7 @@ class Singup extends StatelessWidget {
                   backgroundColor: Color.fromRGBO(85, 132, 122, 1),
                 ));
               }
-              else if(nameController.text.length<9){
+              else if(nameController.text.length>10){
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text(
                     'Please write your short name',
